@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0b110e">
+<title>Touchline — Football Match Hub</title>
+<style>
+:root{--bg:#080d0b;--panel:#101814;--panel2:#151f19;--line:#25332a;--text:#f1f7f2;--muted:#9eafa3;--green:#b7ff55;--green2:#62d83d;--red:#ff6e73}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 80% -20%,#1d3a27 0,transparent 45%),var(--bg);color:var(--text);font:15px/1.5 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+a{color:inherit}.shell{max-width:1160px;margin:auto;padding:0 22px}.topbar{height:76px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ffffff13}.brand{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:-.7px;font-size:22px}.logo{width:35px;height:35px;border-radius:11px;background:var(--green);color:#0a130a;display:grid;place-items:center;font-size:21px}.nav{display:flex;gap:7px}.nav button,.filter button{background:transparent;color:var(--muted);border:0;padding:10px 14px;border-radius:10px;cursor:pointer;font-weight:700}.nav button.active,.nav button:hover,.filter button.active{background:#b7ff5519;color:var(--green)}.pill{border:1px solid #b7ff5544;color:var(--green);padding:6px 10px;border-radius:99px;font-size:12px;font-weight:800}
+.hero{padding:44px 0 28px;display:grid;grid-template-columns:1.2fr .8fr;gap:22px;align-items:stretch}.eyebrow{color:var(--green);font-size:12px;font-weight:900;letter-spacing:1.8px;text-transform:uppercase}.hero h1{font-size:clamp(34px,5vw,58px);line-height:1.02;letter-spacing:-2.5px;margin:12px 0 15px;max-width:650px}.hero h1 span{color:var(--green)}.hero p{color:var(--muted);max-width:570px;margin:0 0 23px}.primary{background:var(--green);color:#091109;border:0;padding:12px 17px;border-radius:11px;font-weight:900;cursor:pointer}.secondary{background:#ffffff08;color:var(--text);border:1px solid var(--line);padding:12px 17px;border-radius:11px;font-weight:800;cursor:pointer}.hero-actions{display:flex;gap:10px;flex-wrap:wrap}.feature{border:1px solid #ffffff14;background:linear-gradient(145deg,#18251b,#0c130f);border-radius:22px;padding:22px;display:flex;flex-direction:column;justify-content:space-between;min-height:235px;position:relative;overflow:hidden}.feature:after{content:"";position:absolute;width:210px;height:210px;border:1px solid #b7ff5530;border-radius:50%;right:-60px;top:-65px;box-shadow:0 0 0 25px #b7ff5508,0 0 0 50px #b7ff5505}.feature .big{font-size:60px;line-height:1}.feature small{color:var(--muted)}.section-head{display:flex;align-items:center;justify-content:space-between;gap:14px;margin:25px 0 14px}.section-head h2{font-size:22px;margin:0;letter-spacing:-.6px}.muted{color:var(--muted)}.statusline{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:12px}.dot{width:7px;height:7px;background:var(--green2);border-radius:50%;display:inline-block}.filter{display:flex;gap:5px;flex-wrap:wrap;background:#ffffff05;border:1px solid var(--line);padding:5px;border-radius:13px}.match-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}.match{background:linear-gradient(155deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:17px;padding:17px;min-width:0}.match-top{display:flex;justify-content:space-between;gap:8px;font-size:11px;color:var(--muted);margin-bottom:20px}.live{color:var(--green);font-weight:900;letter-spacing:.5px}.teams{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:9px}.team{text-align:center;font-weight:800;font-size:13px}.crest{height:48px;width:48px;margin:0 auto 8px;border-radius:15px;background:#26372b;display:grid;place-items:center;font-size:23px;border:1px solid #ffffff12}.score{font-size:25px;font-weight:900;letter-spacing:-1px}.match-bottom{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);margin-top:18px;padding-top:13px;font-size:12px;color:var(--muted)}.small-link{color:var(--green);text-decoration:none;font-weight:800}.fixtures{display:grid;gap:9px}.fixture{display:grid;grid-template-columns:100px 1fr auto;gap:15px;align-items:center;padding:14px 16px;border:1px solid var(--line);border-radius:13px;background:#101713}.fixture-date{font-size:12px;color:var(--muted)}.fixture-teams{font-weight:800}.fixture-comp{font-size:12px;color:var(--muted);margin-top:3px}.fixture-time{font-weight:900;color:var(--green)}.watch-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}.watch-card{padding:20px;border:1px solid var(--line);border-radius:17px;background:var(--panel)}.watch-icon{font-size:28px;margin-bottom:15px}.watch-card h3{margin:0 0 8px}.watch-card p{color:var(--muted);font-size:13px;min-height:58px}.watch-card a{display:inline-block;margin-top:8px;text-decoration:none;color:var(--green);font-weight:900}.notice{border:1px solid #b7ff5530;background:#b7ff5508;padding:14px 16px;border-radius:12px;color:#c8d7cb;font-size:13px;margin:17px 0}.notice strong{color:var(--green)}.hidden{display:none!important}footer{border-top:1px solid var(--line);margin-top:45px;padding:25px 0 35px;color:var(--muted);font-size:12px;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}.empty{padding:25px;text-align:center;border:1px dashed var(--line);border-radius:15px;color:var(--muted)}.api-note{font-size:12px;color:var(--muted);margin-top:8px}
+@media(max-width:800px){.hero{grid-template-columns:1fr}.feature{min-height:170px}.match-grid,.watch-grid{grid-template-columns:1fr 1fr}.nav button{padding:8px}.pill{display:none}}
+@media(max-width:540px){.shell{padding:0 14px}.topbar{height:auto;padding:14px 0;align-items:flex-start;gap:10px;flex-direction:column}.nav{width:100%;overflow:auto}.hero{padding-top:30px}.match-grid,.watch-grid{grid-template-columns:1fr}.fixture{grid-template-columns:70px 1fr auto;gap:9px;padding:12px}.hero h1{letter-spacing:-1.6px}.section-head{align-items:flex-start;flex-direction:column}}
+</style>
+</head>
+<body>
+<header class="shell topbar">
+  <div class="brand"><span class="logo">⚽</span> TOUCHLINE<span class="pill">MATCH HUB</span></div>
+  <nav class="nav" aria-label="Main navigation">
+    <button class="active" data-page="scores">Scores</button><button data-page="fixtures">Fixtures</button><button data-page="watch">Watch</button>
+  </nav>
+</header>
+<main class="shell">
+  <section class="hero">
+    <div>
+      <div class="eyebrow">Your football, one touch away</div>
+      <h1>Every match.<br><span>One home.</span></h1>
+      <p>Follow the action with match scores, upcoming fixtures and links to official viewing options — in one dark, modern football hub.</p>
+      <div class="hero-actions"><button class="primary" id="jumpScores">Explore matches ↗</button><button class="secondary" id="jumpWatch">Find where to watch</button></div>
+    </div>
+    <div class="feature"><div><span class="pill">MATCHDAY CENTRAL</span><div class="big" style="margin-top:20px">90<span style="color:var(--green)">+</span></div><small>Minutes of pure football drama.</small></div><div style="color:var(--green);font-weight:900">LIVE THE GAME&nbsp; ↗</div></div>
+  </section>
+
+  <section id="scoresPage">
+    <div class="section-head"><div><div class="eyebrow">The action</div><h2>Live scores</h2><div class="statusline" style="margin-top:7px"><span class="dot"></span><span id="dataStatus">Demo data — connect the API to load real fixtures</span></div></div>
+      <div class="filter" id="scoreFilters"><button class="active" data-filter="all">All</button><button data-filter="live">Live</button><button data-filter="finished">Finished</button></div>
+    </div>
+    <div class="match-grid" id="matchGrid"></div>
+    <div class="api-note">Demo scores are examples, not real match results. Live data needs a configured football-data.org API proxy.</div>
+  </section>
+
+  <section id="fixturesPage" class="hidden">
+    <div class="section-head"><div><div class="eyebrow">Plan your watch</div><h2>Upcoming fixtures</h2></div><span class="pill">KICK-OFF TIMES IN YOUR LOCAL ZONE</span></div>
+    <div class="fixtures" id="fixtureList"></div>
+  </section>
+
+  <section id="watchPage" class="hidden">
+    <div class="section-head"><div><div class="eyebrow">Watch legally</div><h2>Official viewing options</h2></div></div>
+    <div class="notice"><strong>Important:</strong> Touchline does not host or rebroadcast match footage. Broadcast rights vary by country and competition. Use official broadcaster listings and authorised services; some streams require a subscription.</div>
+    <div class="watch-grid">
+      <article class="watch-card"><div class="watch-icon">🏆</div><h3>Premier League</h3><p>Check the league's official broadcast guide to find the authorised broadcaster in your country.</p><a href="https://www.premierleague.com/en/about/faq/broadcast" target="_blank" rel="noopener">Official broadcast guide ↗</a></article>
+      <article class="watch-card"><div class="watch-icon">🌍</div><h3>UEFA competitions</h3><p>Find official Champions League and other UEFA competition viewing information.</p><a href="https://www.uefa.com/" target="_blank" rel="noopener">UEFA official site ↗</a></article>
+      <article class="watch-card"><div class="watch-icon">▶️</div><h3>Official highlights</h3><p>Look for highlights and clips published by the league, club or rights-holder's verified channel.</p><a href="https://www.youtube.com/@premierleague" target="_blank" rel="noopener">Premier League YouTube ↗</a></article>
+    </div>
+    <div class="notice">For a specific match, check the rights-holder's official app or website for your region. Do not embed or link to unauthorised restreams. Only embed videos where the publisher permits embedding.</div>
+  </section>
+</main>
+<footer class="shell"><span>© <span id="year"></span> TOUCHLINE · Fan-made learning project</span><span>Not affiliated with any league or club. Match data may be delayed or limited by the provider.</span></footer>
+<script>
+const DEMO_MATCHES = [
+ {competition:"Premier League",status:"LIVE",minute:"62′",home:"Arsenal",away:"Chelsea",homeShort:"ARS",awayShort:"CHE",homeEmoji:"🔴",awayEmoji:"🔵",homeScore:2,awayScore:1,kind:"live"},
+ {competition:"La Liga",status:"FINISHED",minute:"FT",home:"Barcelona",away:"Real Madrid",homeShort:"BAR",awayShort:"RMA",homeEmoji:"🔵",awayEmoji:"⚪",homeScore:2,awayScore:2,kind:"finished"},
+ {competition:"Champions League",status:"FINISHED",minute:"FT",home:"Inter",away:"Bayern",homeShort:"INT",awayShort:"BAY",homeEmoji:"⚫",awayEmoji:"🔴",homeScore:1,awayScore:0,kind:"finished"}
+];
+const DEMO_FIXTURES = [
+ {date:"2026-10-24T12:30:00Z",competition:"Premier League",home:"Manchester City",away:"Aston Villa"},
+ {date:"2026-10-24T15:00:00Z",competition:"Premier League",home:"Liverpool",away:"Brentford"},
+ {date:"2026-10-25T16:30:00Z",competition:"La Liga",home:"Real Madrid",away:"Barcelona"},
+ {date:"2026-10-27T20:00:00Z",competition:"Champions League",home:"Arsenal",away:"Inter"}
+];
+let matches = DEMO_MATCHES;
+let fixtures = DEMO_FIXTURES;
+let currentFilter = "all";
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+function renderMatches(){
+ const list = matches.filter(m => currentFilter==="all" || (currentFilter==="live" ? ["LIVE","IN_PLAY","PAUSED"].includes(m.status) : ["FINISHED","AWARDED"].includes(m.status)));
+ const grid=document.getElementById("matchGrid");
+ if(!list.length){grid.innerHTML='<div class="empty">No matches in this filter right now.</div>';return;}
+ grid.innerHTML=list.map(m=>{
+  const live=["LIVE","IN_PLAY","PAUSED"].includes(m.status);
+  const home=m.homeTeam?.shortName || m.homeTeam?.name || m.home || "Home";
+  const away=m.awayTeam?.shortName || m.awayTeam?.name || m.away || "Away";
+  const hs=m.score?.fullTime?.home ?? m.homeScore ?? "–", as=m.score?.fullTime?.away ?? m.awayScore ?? "–";
+  const minute=live && m.minute ? `${m.minute}′` : (m.minute || (m.status==="FINISHED"?"FT":m.status));
+  const comp=m.competition?.name || m.competition || "Football";
+  return `<article class="match"><div class="match-top"><span>${esc(comp)}</span><span class="${live?'live':''}">${live?'● LIVE':esc(minute)}</span></div><div class="teams"><div class="team"><div class="crest">${esc(m.homeEmoji || "⚽")}</div>${esc(home)}</div><div class="score">${esc(hs)} <span class="muted">:</span> ${esc(as)}</div><div class="team"><div class="crest">${esc(m.awayEmoji || "⚽")}</div>${esc(away)}</div></div><div class="match-bottom"><span>${live?'In progress':esc(m.status || 'Match')}</span><a class="small-link" href="https://www.premierleague.com/en/about/faq/broadcast" target="_blank" rel="noopener">Watch options ↗</a></div></article>`;
+ }).join("");
+}
+function renderFixtures(){
+ const list=document.getElementById("fixtureList");
+ if(!fixtures.length){list.innerHTML='<div class="empty">No fixtures returned. Try again later.</div>';return;}
+ list.innerHTML=fixtures.map(m=>{
+  const date = m.utcDate || m.date;
+  const d = date ? new Date(date) : null;
+  const dateText = d && !Number.isNaN(d.getTime()) ? d.toLocaleDateString(undefined,{weekday:"short",month:"short",day:"numeric"}) : "Upcoming";
+  const timeText = d && !Number.isNaN(d.getTime()) ? d.toLocaleTimeString(undefined,{hour:"2-digit",minute:"2-digit"}) : "TBC";
+  const home=m.homeTeam?.shortName || m.homeTeam?.name || m.home || "Home";
+  const away=m.awayTeam?.shortName || m.awayTeam?.name || m.away || "Away";
+  return `<article class="fixture"><div class="fixture-date">${esc(dateText)}<br>${esc(m.competition?.name || m.competition || "Football")}</div><div><div class="fixture-teams">${esc(home)} <span class="muted">vs</span> ${esc(away)}</div><div class="fixture-comp">Match centre · local time</div></div><div class="fixture-time">${esc(timeText)}</div></article>`;
+ }).join("");
+}
+function showPage(page){
+ for(const p of ["scores","fixtures","watch"]) document.getElementById(p+"Page").classList.toggle("hidden",p!==page);
+ document.querySelectorAll("[data-page]").forEach(b=>b.classList.toggle("active",b.dataset.page===page));
+ window.scrollTo({top:0,behavior:"smooth"});
+}
+document.querySelectorAll("[data-page]").forEach(b=>b.addEventListener("click",()=>showPage(b.dataset.page)));
+document.getElementById("jumpScores").addEventListener("click",()=>showPage("scores"));
+document.getElementById("jumpWatch").addEventListener("click",()=>showPage("watch"));
+document.querySelectorAll("[data-filter]").forEach(b=>b.addEventListener("click",()=>{currentFilter=b.dataset.filter;document.querySelectorAll("[data-filter]").forEach(x=>x.classList.toggle("active",x===b));renderMatches();}));
+document.getElementById("year").textContent=new Date().getFullYear();
+renderMatches();renderFixtures();
+
+// Set API_BASE after deploying worker.js. Example: https://touchline-api.YOUR-SUBDOMAIN.workers.dev
+const API_BASE = "";
+async function loadRealMatches(){
+ if(!API_BASE) return;
+ try{
+  document.getElementById("dataStatus").textContent="Loading real match data…";
+  const res=await fetch(`${API_BASE}/matches`);
+  if(!res.ok) throw new Error("API returned "+res.status);
+  const data=await res.json();
+  if(Array.isArray(data.matches)){
+   matches=data.matches;
+   fixtures=data.matches.filter(m=>["SCHEDULED","TIMED"].includes(m.status));
+   renderMatches();renderFixtures();
+   document.getElementById("dataStatus").textContent="Football-data.org · refreshed "+new Date().toLocaleTimeString();
+  }else throw new Error("Unexpected API response");
+ }catch(e){document.getElementById("dataStatus").textContent="Could not load live data; showing demo examples.";console.warn(e);}
+}
+loadRealMatches();
+</script>
+</body>
+</html>
